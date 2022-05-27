@@ -15,7 +15,7 @@ namespace UserRegistration
         public static string LASTNAME = "^[A-Z][a-z]*$";
         public static string EMAIL = @"^[\w \- . ]{1,}@?[a-z A-Z]{2,}.?(com)$";
         public static string PHONE = "^[9][1][6-9][0-9]{9}$";
-
+        public static string PASSWORD = "^[a-z A-Z]{8}[a-z A-Z]*$";
 
         public bool validateFirstName()
         {
@@ -47,6 +47,13 @@ namespace UserRegistration
             return Regex.IsMatch(phone, PHONE);
         }
 
+        public bool validatePassword()
+        {
+            Console.WriteLine("\nEnter your Password!");
+            string password = Console.ReadLine();
+            return Regex.IsMatch(password, PASSWORD);
+        }
+
 
         static void Main(string[] args)
         {
@@ -57,7 +64,7 @@ namespace UserRegistration
             Console.WriteLine(p.validateLastName());
             Console.WriteLine(p.validateEmail());
             Console.WriteLine(p.validatePhone());
-
+            Console.WriteLine(p.validatePassword());
         }
     }
 }
