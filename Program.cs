@@ -13,6 +13,7 @@ namespace UserRegistration
 
         public static string FIRSTNAME = "^[A-Z][a-z]*$";
         public static string LASTNAME = "^[A-Z][a-z]*$";
+        public static string EMAIL = @"^[\w \- . ]{1,}@?[a-z A-Z]{2,}.?(com)$";
 
 
         public bool validateFirstName()
@@ -20,6 +21,13 @@ namespace UserRegistration
             Console.WriteLine("Enter your First Name");
             string firstname = Console.ReadLine();
             return Regex.IsMatch(firstname, FIRSTNAME);
+        }
+
+        public bool validateEmail()
+        {
+            Console.WriteLine("Enter your Email ID!");
+            string email = Console.ReadLine();
+            return Regex.IsMatch(email, EMAIL);
         }
 
         public bool validateLastName()
@@ -32,8 +40,6 @@ namespace UserRegistration
 
 
 
-
-
         static void Main(string[] args)
         {
             Console.WriteLine("USER REGISTRATION PROGRAM!\n");
@@ -41,6 +47,7 @@ namespace UserRegistration
             Program p = new Program();
             Console.WriteLine(p.validateFirstName());
             Console.WriteLine(p.validateLastName());
+            Console.WriteLine(p.validateEmail());
 
         }
     }
