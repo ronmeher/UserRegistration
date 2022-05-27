@@ -14,30 +14,38 @@ namespace UserRegistration
         public static string FIRSTNAME = "^[A-Z][a-z]*$";
         public static string LASTNAME = "^[A-Z][a-z]*$";
         public static string EMAIL = @"^[\w \- . ]{1,}@?[a-z A-Z]{2,}.?(com)$";
+        public static string PHONE = "^[9][1][6-9][0-9]{9}$";
 
 
         public bool validateFirstName()
         {
-            Console.WriteLine("Enter your First Name");
+            Console.WriteLine("\nEnter your First Name");
             string firstname = Console.ReadLine();
             return Regex.IsMatch(firstname, FIRSTNAME);
         }
 
-        public bool validateEmail()
-        {
-            Console.WriteLine("Enter your Email ID!");
-            string email = Console.ReadLine();
-            return Regex.IsMatch(email, EMAIL);
-        }
-
         public bool validateLastName()
         {
-            Console.WriteLine("Enter your Last Name");
+            Console.WriteLine("\nEnter your Last Name!");
             string lastname = Console.ReadLine();
             return Regex.IsMatch(lastname, LASTNAME);
         }
 
+        public bool validateEmail()
+        {
+            Console.WriteLine("\nEnter your Email ID!");
+            string email = Console.ReadLine();
+            return Regex.IsMatch(email, EMAIL);
+        }
 
+        
+
+        public bool validatePhone()
+        {
+            Console.WriteLine("\nEnter your Phone Number!");
+            string phone = Console.ReadLine();
+            return Regex.IsMatch(phone, PHONE);
+        }
 
 
         static void Main(string[] args)
@@ -48,6 +56,7 @@ namespace UserRegistration
             Console.WriteLine(p.validateFirstName());
             Console.WriteLine(p.validateLastName());
             Console.WriteLine(p.validateEmail());
+            Console.WriteLine(p.validatePhone());
 
         }
     }
