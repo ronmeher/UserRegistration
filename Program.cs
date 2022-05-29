@@ -15,7 +15,9 @@ namespace UserRegistration
         public static string LASTNAME = "^[A-Z][a-z]*$";
         public static string EMAIL = @"^[\w \- . ]{1,}@?[a-z A-Z]{2,}.?(com)$";
         public static string PHONE = "^[9][1][6-9][0-9]{9}$";
-        public static string PASSWORD = "^[a-z A-Z]{8}[a-z A-Z]*$";
+        public static string PASSWORD = "^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$";
+
+
 
         public bool validateFirstName()
         {
@@ -60,10 +62,10 @@ namespace UserRegistration
             Console.WriteLine("USER REGISTRATION PROGRAM!\n");
 
             Program p = new Program();
-            Console.WriteLine(p.validateFirstName());
-            Console.WriteLine(p.validateLastName());
-            Console.WriteLine(p.validateEmail());
-            Console.WriteLine(p.validatePhone());
+            //Console.WriteLine(p.validateFirstName());
+            //Console.WriteLine(p.validateLastName());
+            //Console.WriteLine(p.validateEmail());
+            //Console.WriteLine(p.validatePhone());
             Console.WriteLine(p.validatePassword());
         }
     }
